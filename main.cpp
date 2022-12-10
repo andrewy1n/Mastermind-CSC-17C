@@ -16,8 +16,7 @@ using namespace std;
 #include "Mastermind.h"
 
 int main(){
-    Mastermind mastermindGame;
-    map<int,string> answer;
+    Mastermind mastermind;
 
     cout << "Welcome to Mastermind!" << endl;
     cout << endl << "Do you want to choose your rules?" << endl << endl;
@@ -34,10 +33,12 @@ int main(){
         cin >> input;
     }
     if(input == 1){
-        mastermindGame.preGame();
+        mastermind.preGame();
+    }else{
+        mastermind.answer= mastermind.genAnswer();
     }
         
-    mastermindGame.gameLoop();
+    mastermind.gameLoop();
 
     return 0; 
 }
